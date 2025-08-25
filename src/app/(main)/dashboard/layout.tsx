@@ -1,3 +1,4 @@
+import RunwayAlert from "@/components/RunwayAlert";
 import Overview from "@/components/subpages/dashboard/Overview";
 import DashboardNavigation from "@/components/ui/DashboardNavigation";
 import { ArrowUpDown, BanknoteArrowDown, BanknoteArrowUp, Bell, PanelsTopLeft, Plane } from "lucide-react";
@@ -14,16 +15,7 @@ export default function Dashboard({
 
     <div className="flex flex-col gap-y-4">
     {/* runway alert */}
-    <div className="bg-red-200 border border-red-700 flex flex-col gap-y-1 rounded-md px-4 py-2 mt-2">
-      <span className="flex gap-x-2 text-red-700">
-        <Bell className="h-4 w-4" />
-        <p className="text-xs">Runway Alert</p>
-      </span>
-      <div>
-        <h1 className="font-bold">11 months</h1>
-        <h2 className="text-xs">You have 11 months of runway remaining at current burn rate.</h2>
-      </div>
-    </div>
+    <RunwayAlert />
 
     {/* navigation */}
     <DashboardNavigation />

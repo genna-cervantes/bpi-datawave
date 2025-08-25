@@ -10,7 +10,7 @@ interface StartupContextType {
 const StartupContext = createContext<StartupContextType | undefined>(undefined)
 
 export function StartupProvider({ children }: { children: ReactNode }) {
-  const [startupName, setStartupName] = useState('EcoCart Logistics')
+  const [startupName, setStartupName] = useState('PopOps')
 
   return (
     <StartupContext.Provider value={{ startupName, setStartupName }}>

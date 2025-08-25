@@ -3,13 +3,18 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { v4 as uuidv4 } from "uuid";
-import { Plus, Scroll, Send, User, X } from "lucide-react";
+import { Bot, Plus, Scroll, Send, User, X } from "lucide-react";
 import Link from "next/link";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { Streamdown } from "streamdown";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { useSearchParams, useRouter } from "next/navigation";
+import { useStartup } from "@/contexts/StartupContext";
 
 export default function Assistant() {
+  const searchParams = useSearchParams();
+  const  {startupName} = useStartup();
+  const router = useRouter();
   const [message, setMessage] = useState("");
   const [shouldStack, setShouldStack] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
@@ -18,6 +23,14 @@ export default function Assistant() {
   const [messages, setMessages] = useState<{ from: string; content: string }[]>(
     []
   );
+
+  useEffect(() => {
+    const messageParam = searchParams.get("message");
+    if (messageParam) {
+      setMessage(messageParam);
+      setAutoSend(true);
+    }
+  }, [searchParams]);
 
   // Auto-send message when autoSend is true
   useEffect(() => {
@@ -39,10 +52,15 @@ export default function Assistant() {
     setMessages((prev) => [...prev, { from: "user", content: messageToSend }]);
     setMessage("");
 
+    // Clear search params after sending
+    if (searchParams.has("message")) {
+      router.replace("/assistant");
+    }
+
     try {
-      const res = await fetch("http://localhost:8000/chat/stream", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/chat/stream`, {
         method: "POST",
-        body: JSON.stringify({ message: messageToSend }),
+        body: JSON.stringify({ message: messageToSend, startup_name: startupName }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -108,7 +126,7 @@ export default function Assistant() {
   return (
     <div className="h-screen overflow-hidden font-mono flex flex-col justify-between pb-4">
       {/* header - chat tabs */}
-      <div className="border-b bg-gray-100 flex">
+      {/* <div className="border-b bg-gray-100 flex">
         <Link
           href="/"
           className="border bg-white p-0 text-sm px-2 py-1 flex gap-x-2 items-center"
@@ -122,9 +140,14 @@ export default function Assistant() {
         <button className="px-2 hover:cursor-pointer">
           <Plus className="h-3 w-3" />
         </button>
+      </div> */}
+      <div className="px-2 py-2 border-b flex items-center gap-x-2">
+        <Bot className="w-5 h-5" />
+        <h1 className="text-sm font-semibold">AI Finance Assistant</h1>
       </div>
+
       {/* chat messages */}
-      <div className="w-full flex-1 flex flex-col p-2 gap-y-2 overflow-y-auto">
+      <div className="w-full flex-1 flex flex-col p-2 gap-y-2 overflow-y-auto mt-4">
         {messages.map((m) => {
           if (m.from === "user") {
             return <UserMessage key={uuidv4()} message={m.content} />;

@@ -20,6 +20,9 @@ const notoSerif = Noto_Serif({
 export const metadata: Metadata = {
   title: "Cashflow Guardian",
   description: "Cashflow Guard is a tool that helps you manage your cashflow",
+  icons: {
+    icon: "/venture_compass.png",
+  },
 };
 
 export default function RootLayout({

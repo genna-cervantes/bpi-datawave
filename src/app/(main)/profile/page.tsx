@@ -28,64 +28,103 @@ const startupData = {
 
 export default function Profile() {
   const { startupName, setStartupName } = useStartup()
-  const currentStartup = startupData[startupName as keyof typeof startupData]
   
   return (
     <div className="font-mono flex items-center flex-col gap-y-4 h-full justify-center py-24">
+      <div className="border px-4 py-3 w-2/3 rounded-md">
+        <div className="flex items-center justify-between gap-x-4">
+          <div>
+            <div className="flex gap-x-2 items-center">
+              <div className="w-8 h-8 rounded-md bg-[var(--main-red)]"></div>
+              <h1 className="text-sm font-semibold">PopOps</h1>
+            </div>
+            <p className="text-xs mt-2">
+              {startupData['PopOps']['description']}
+            </p>
+            <div className="text-xs mt-2">
+              <p>Key Metrics:</p>
+              <div className="grid grid-cols-2 grid-rows-2">
+                <p>Starting Fund: <span className="font-semibold">{startupData['PopOps'].startingFund}</span></p>
+                <p>MRR: <span className="font-semibold">{startupData['PopOps'].mrr}</span></p>
+                <p>Monthly Expenses: <span className="font-semibold">{startupData['PopOps'].monthlyExpenses}</span></p>
+                <p>Risk Tolerance: <span className="font-semibold">{startupData['PopOps'].riskTolerance}</span></p>
+              </div>
+            </div>
+          </div>
+          <button 
+          onClick={() => setStartupName('PopOps')}
+          className={`flex-1 text-xs px-4 py-2 font-semibold rounded-md shrink-0 ${
+            startupName === 'PopOps' 
+              ? 'bg-gray-100 cursor-default' 
+              : 'bg-[var(--main-red)] text-white cursor-pointer hover:bg-[var(--main-red)]'
+          }`}>
+          {startupName === 'PopOps' ? 'Current' : 'Switch to'}
+        </button>
+        </div>
+      </div>
+
       <div className="border px-4 py-3 w-2/3 rounded-md">
         <div className="flex items-center gap-x-4">
           <div>
             <div className="flex gap-x-2 items-center">
               <div className="w-8 h-8 rounded-md bg-[var(--main-red)]"></div>
-              <h1 className="text-sm font-semibold">{startupName}</h1>
+              <h1 className="text-sm font-semibold">SamSamTech</h1>
             </div>
             <p className="text-xs mt-2">
-              {currentStartup.description}
+              {startupData['SamSamTech']['description']}
             </p>
             <div className="text-xs mt-2">
               <p>Key Metrics:</p>
               <div className="grid grid-cols-2 grid-rows-2">
-                <p>Starting Fund: <span className="font-semibold">{currentStartup.startingFund}</span></p>
-                <p>MRR: <span className="font-semibold">{currentStartup.mrr}</span></p>
-                <p>Monthly Expenses: <span className="font-semibold">{currentStartup.monthlyExpenses}</span></p>
-                <p>Risk Tolerance: <span className="font-semibold">{currentStartup.riskTolerance}</span></p>
+                <p>Starting Fund: <span className="font-semibold">{startupData['SamSamTech'].startingFund}</span></p>
+                <p>MRR: <span className="font-semibold">{startupData['SamSamTech'].mrr}</span></p>
+                <p>Monthly Expenses: <span className="font-semibold">{startupData['SamSamTech'].monthlyExpenses}</span></p>
+                <p>Risk Tolerance: <span className="font-semibold">{startupData['SamSamTech'].riskTolerance}</span></p>
               </div>
             </div>
           </div>
-          <button className="text-xs px-2 py-2 shrink-0 bg-gray-100 cursor-default font-semibold rounded-md">
-            Current
-          </button>
+          <button 
+          onClick={() => setStartupName('SamSamTech')}
+          className={`flex-1 text-xs px-4 py-2 font-semibold rounded-md shrink-0 ${
+            startupName === 'SamSamTech' 
+              ? 'bg-gray-100 cursor-default' 
+              : 'bg-[var(--main-red)] text-white cursor-pointer hover:bg-[var(--main-red)]'
+          }`}>
+          {startupName === 'SamSamTech' ? 'Current' : 'Switch to'}
+        </button>
         </div>
       </div>
-      
-      <div className="flex gap-x-4 w-2/3">
-        <button 
-          onClick={() => setStartupName('EcoCart Logistics')}
-          className={`flex-1 text-xs px-4 py-2 font-semibold rounded-md ${
-            startupName === 'EcoCart Logistics' 
-              ? 'bg-gray-100 cursor-default' 
-              : 'bg-[var(--main-red)] text-white cursor-pointer hover:bg-[var(--main-red)]'
-          }`}>
-          {startupName === 'EcoCart Logistics' ? 'Current' : 'Switch to EcoCart'}
-        </button>
-        <button 
-          onClick={() => setStartupName('NeuroLearn AI')}
-          className={`flex-1 text-xs px-4 py-2 font-semibold rounded-md ${
-            startupName === 'NeuroLearn AI' 
-              ? 'bg-gray-100 cursor-default' 
-              : 'bg-[var(--main-red)] text-white cursor-pointer hover:bg-[var(--main-red)]'
-          }`}>
-          {startupName === 'NeuroLearn AI' ? 'Current' : 'Switch to NeuroLearn'}
-        </button>
-        <button 
+
+      <div className="border px-4 py-3 w-2/3 rounded-md">
+        <div className="flex items-center gap-x-4">
+          <div>
+            <div className="flex gap-x-2 items-center">
+              <div className="w-8 h-8 rounded-md bg-[var(--main-red)]"></div>
+              <h1 className="text-sm font-semibold">Craftly Market</h1>
+            </div>
+            <p className="text-xs mt-2">
+              {startupData['Craftly Market']['description']}
+            </p>
+            <div className="text-xs mt-2">
+              <p>Key Metrics:</p>
+              <div className="grid grid-cols-2 grid-rows-2">
+                <p>Starting Fund: <span className="font-semibold">{startupData['Craftly Market'].startingFund}</span></p>
+                <p>MRR: <span className="font-semibold">{startupData['Craftly Market'].mrr}</span></p>
+                <p>Monthly Expenses: <span className="font-semibold">{startupData['Craftly Market'].monthlyExpenses}</span></p>
+                <p>Risk Tolerance: <span className="font-semibold">{startupData['Craftly Market'].riskTolerance}</span></p>
+              </div>
+            </div>
+          </div>
+          <button 
           onClick={() => setStartupName('Craftly Market')}
-          className={`flex-1 text-xs px-4 py-2 font-semibold rounded-md ${
+          className={`flex-1 text-xs px-4 py-2 font-semibold rounded-md shrink-0 ${
             startupName === 'Craftly Market' 
               ? 'bg-gray-100 cursor-default' 
               : 'bg-[var(--main-red)] text-white cursor-pointer hover:bg-[var(--main-red)]'
           }`}>
-          {startupName === 'Craftly Market' ? 'Current' : 'Switch to Craftly'}
+          {startupName === 'Craftly Market' ? 'Current' : 'Switch to'}
         </button>
+        </div>
       </div>
     </div>
   );

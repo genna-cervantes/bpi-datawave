@@ -5,9 +5,11 @@ import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupConte
 import { Button } from "./button";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useStartup } from "@/contexts/StartupContext";
 
 export default function AppSidebar() {
 
+    const { startupName } = useStartup()
     const pathname = usePathname();
 
     return (
@@ -16,7 +18,7 @@ export default function AppSidebar() {
             <SidebarGroupContent className="flex items-center font-mono text-sm gap-x-2">
                 <div className="h-8 w-8 rounded-sm bg-[var(--main-red)]"></div>
                 <div>
-                  <p className="text-sm font-bold">Startup Name</p>
+                  <p className="text-sm font-bold">{startupName}</p>
                   <p className="text-xs text-gray-500">Basic Plan</p>
                 </div>
             </SidebarGroupContent>
