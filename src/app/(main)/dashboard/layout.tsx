@@ -9,7 +9,7 @@ export default function Dashboard({
 
   return <div className="px-2 py-4 font-mono flex flex-col">
 
-    <p className="text-sm font-semibold">Your startup's financial health at a glance,</p>
+    <p className="text-sm font-semibold">Your startup&apos;s financial health at a glance,</p>
 
     <div className="flex flex-col gap-y-4">
     {/* runway alert */}

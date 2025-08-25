@@ -35,7 +35,7 @@ export default function Assistant() {
       setAutoSend(false);
       sendMessage();
     }
-  }, [autoSend, message, isStreaming]);
+  }, [autoSend, message, isStreaming, sendMessage]);
 
   async function sendMessage() {
     if (!message.trim()) return; // Don't send empty messages
