@@ -12,9 +12,9 @@ export default function Home() {
     <div className="flex justify-between h-screen overflow-hidden items-center">
       <div className="h-full flex flex-col justify-end items-start px-10 py-20">
         <div>
-          <h1 className="text-2xl font-bold font-mono">Cashflow Guardian</h1>
+          <h1 className="text-2xl font-bold font-mono">Venture Compass</h1>
           <p className=" mt-2">
-            Cashflow Guardian is a tool that helps you manage your cashflow. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+          Venture Compass is an AI-powered assistant designed to help startups manage their finances and track goals, providing smarter insights and guidance to support better decisions and long-term success.
           </p>
         </div>
         <Button size='sm' onClick={() => router.push('/assistant')} className="hover:bg-[var(--main-red)] font-semibold cursor-pointer mt-4 bg-gray-100 text-black hover:text-white text-md font-mono">Get Started</Button>
