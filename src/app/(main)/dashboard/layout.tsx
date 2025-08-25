@@ -1,7 +1,5 @@
 import RunwayAlert from "@/components/RunwayAlert";
-import Overview from "@/components/subpages/dashboard/Overview";
 import DashboardNavigation from "@/components/ui/DashboardNavigation";
-import { ArrowUpDown, BanknoteArrowDown, BanknoteArrowUp, Bell, PanelsTopLeft, Plane } from "lucide-react";
 
 export default function Dashboard({
     children,

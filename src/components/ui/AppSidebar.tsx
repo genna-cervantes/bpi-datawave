@@ -1,8 +1,7 @@
 'use client'
 
-import { LayoutDashboard, LogOut, MessageSquare, UserCircle } from "lucide-react";
+import { LayoutDashboard, MessageSquare, UserCircle } from "lucide-react";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenuItem, SidebarSeparator } from "./sidebar";
-import { Button } from "./button";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useStartup } from "@/contexts/StartupContext";

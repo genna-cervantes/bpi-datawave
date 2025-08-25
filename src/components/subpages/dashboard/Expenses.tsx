@@ -8,32 +8,9 @@ import {
   Pie,
   PieChart,
   ResponsiveContainer,
-  Sector,
-  SectorProps,
   Cell,
 } from "recharts";
 import { formatNumber } from "./Overview";
-
-type Coordinate = {
-  x: number;
-  y: number;
-};
-
-type PieSectorData = {
-  percent?: number;
-  name?: string | number;
-  midAngle?: number;
-  middleRadius?: number;
-  tooltipPosition?: Coordinate;
-  value?: number;
-  paddingAngle?: number;
-  dataKey?: string;
-  payload?: any;
-};
-
-type PieSectorDataItem = React.SVGProps<SVGPathElement> &
-  Partial<SectorProps> &
-  PieSectorData;
 
 // Color palette for the pie chart
 const chartColors = [

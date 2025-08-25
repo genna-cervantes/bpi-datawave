@@ -1,13 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { v4 as uuidv4 } from "uuid";
-import { Bot, Plus, Scroll, Send, User, X } from "lucide-react";
-import Link from "next/link";
+import { Bot, Send } from "lucide-react";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { Streamdown } from "streamdown";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useStartup } from "@/contexts/StartupContext";
 
@@ -77,7 +74,7 @@ export default function Assistant() {
         const { done, value } = await reader.read();
         if (done) break;
 
-        let chunk = decoder.decode(value, { stream: true });
+        const chunk = decoder.decode(value, { stream: true });
         const lines = chunk.split("\n");
         for (const line of lines) {
           if (!line.startsWith("data:")) continue;
