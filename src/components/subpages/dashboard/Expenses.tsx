@@ -59,7 +59,7 @@ export default function Expenses() {
   useEffect(() => {
     const fetchExpenseData = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_BACKEND_URL}/db/expenses`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/db/expenses`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -181,7 +181,7 @@ export default function Expenses() {
               <div className="flex gap-x-1">
                 <TrendingDown className="h-4 w-4 mr-1" />
                 <p className="text-xsfont-medium">Potential Savings:</p>
-                <p className="text-xs font-bold ">$2,400/month</p>
+                <p className="text-xs font-bold ">₱2,400/month</p>
               </div>
             </div>
           </div>
@@ -201,8 +201,8 @@ export default function Expenses() {
               </p>
               <span className="flex items-center gap-x-2 mt-1">
                 <p className="text-green-600 font-semibold text-xs">
-                    Save $840/month
-                </p>
+                    Save ₱840/month
+                </p>  
                 <TooltipProvider>
                   <TooltipShad>
                     <TooltipContent>
@@ -231,7 +231,7 @@ export default function Expenses() {
               </p>
               <span className="flex items-center gap-x-2 mt-1">
                 <p className="text-green-600 font-semibold text-xs">
-                    Save $840/month
+                    Save ₱840/month
                 </p>
                 <TooltipProvider>
                   <TooltipShad>
@@ -261,7 +261,7 @@ export default function Expenses() {
               </p>
               <span className="flex items-center gap-x-2 mt-1">
                 <p className="text-green-600 font-semibold text-xs">
-                    Save $840/month
+                    Save ₱840/month
                 </p>
                 <TooltipProvider>
                   <TooltipShad>

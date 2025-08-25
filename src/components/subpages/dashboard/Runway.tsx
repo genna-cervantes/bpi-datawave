@@ -168,7 +168,7 @@ export default function Runway() {
                   <span className="text-xs">15% dilution</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-600">$2.5M raised</span>
+                  <span className="text-xs text-gray-600">₱2.5M raised</span>
                   <span className="text-xs text-gray-600">January 2024</span>
                 </div>
               </div>
@@ -227,11 +227,11 @@ export default function Runway() {
           <div className="mt-2">
             <div className="flex justify-between items-center mb-1">
               <span className="text-xs">Target ARR</span>
-              <span className="text-xs font-semibold">$500K</span>
+              <span className="text-xs font-semibold">₱500K</span>
             </div>
             <div className="flex justify-between items-center mb-2">
               <span className="text-xs">Current ARR</span>
-              <span className="text-xs font-semibold">$300,000</span>
+              <span className="text-xs font-semibold">₱300,000</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2 mb-1">
               <div

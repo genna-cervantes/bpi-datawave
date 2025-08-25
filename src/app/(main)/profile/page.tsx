@@ -5,23 +5,23 @@ import { useStartup } from '@/contexts/StartupContext'
 const startupData = {
   'PopOps': {
     description: 'EcoCart Logistics is a green supply chain startup focused on last-mile delivery using electric bikes and solar-powered charging hubs in urban centers.',
-    startingFund: '$750,000',
-    mrr: '$45,000',
-    monthlyExpenses: '$38,000',
+    startingFund: '₱750,000',
+    mrr: '₱45,000',
+    monthlyExpenses: '₱38,000',
     riskTolerance: 'Moderate'
   },
   'SamSamTech': {
     description: 'NeuroLearn AI builds personalized learning assistants powered by generative AI, helping students with real-time feedback, adaptive exercises, and multilingual tutoring.',
-    startingFund: '$1,200,000',
-    mrr: '$90,000',
-    monthlyExpenses: '$65,000',
+    startingFund: '₱1,200,000',
+    mrr: '₱90,000',
+    monthlyExpenses: '₱65,000',
     riskTolerance: 'High'
   },
   'Craftly Market': {
     description: 'Craftly Market is a curated online marketplace that connects Filipino artisans to global buyers, focusing on handmade crafts, ethical sourcing, and sustainable packaging.',
-    startingFund: '$250,000',
-    mrr: '$12,000',
-    monthlyExpenses: '$10,500',
+    startingFund: '₱250,000',
+    mrr: '₱12,000',
+    monthlyExpenses: '₱10,500',
     riskTolerance: 'Low'
   }
 }

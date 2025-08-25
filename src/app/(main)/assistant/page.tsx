@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { v4 as uuidv4 } from "uuid";
 import { Bot, Send } from "lucide-react";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { Streamdown } from "streamdown";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useStartup } from "@/contexts/StartupContext";
+import ReactMarkdown from "react-markdown";
 
 export default function Assistant() {
   const searchParams = useSearchParams();
@@ -222,7 +222,7 @@ export default function Assistant() {
 function AssistantMessage({ message }: { message: string }) {
   return (
     <div className="text-xs max-w-[80%] rounded-t-md bg-gray-50 rounded-br-md px-2 py-2 w-fit">
-      <Streamdown>{message}</Streamdown>
+      <ReactMarkdown>{message}</ReactMarkdown>
     </div>
   );
 }
