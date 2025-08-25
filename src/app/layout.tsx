@@ -18,8 +18,8 @@ const notoSerif = Noto_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Cashflow Guardian",
-  description: "Cashflow Guard is a tool that helps you manage your cashflow",
+  title: "Venture Compass",
+  description: "Venture Compass is an AI-powered assistant designed to help startups manage their finances and track goals, providing smarter insights and guidance to support better decisions and long-term success.",
   icons: {
     icon: "/venture_compass.png",
   },
